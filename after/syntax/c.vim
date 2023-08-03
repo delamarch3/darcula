@@ -10,10 +10,6 @@ syn match cPreInclude +\(\<include\>\s\{-}\)\@42<=["<][^<>"]*[>"]+ contained
 syn clear cStructure
 syn match cDataStructure "\<\(struct\|class\|enum\_s\{-}class\|enum\|union\|namespace\)\>\_s\{-}\zs\<\I\i*\>" contained
 syn match cDataStructureKeyword contains=cDataStructure "\<\(struct\|class\|enum\_s\{-}class\|enum\|union\|namespace\)\>\_s\{-}\<\I\i*\>"
-syn match cFunction "\(\(\.\|->\|[(){};=!,]\|\<new\>.*\|&&\)\_s\{-}\)\@42<!\<\I\i*\>\ze\_s\{-}("
-syn match cSemicolon ";"
-syn match cComma ","
-syn match cStructField "\.\zs\_s\{-}\<\I\i*\>"
 syn keyword cTypedef typedef
 syn keyword cSomeMacro NULL FALSE TRUE
 syn match cEnum "\<enum\>\ze\_s\{-}{"

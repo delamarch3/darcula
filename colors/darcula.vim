@@ -58,8 +58,7 @@ let s:p={
       \ 'typo': ['#659C6B', 72],
       \ 'metaData': ['#BBB529', 142],
       \ 'macroName': ['#908B25', 100],
-      \ 'cDataStructure': ['#B5B6E3', 146],
-      \ 'cStructField': ['#9373A5', 103],
+      \ 'cDataStructure': ['#A9B7C6', 146],
       \ 'debug': ['#666D75', 102],
       \ 'codeError': ['#532B2E', 52],
       \ 'codeWarning': ['#52503A', 59],
@@ -83,7 +82,7 @@ let s:p={
       \ 'tabLineSel': ['#4E5254', 239],
       \ 'shCommand': ['#C57633', 137],
       \ 'templateLanguage': ['#232525', 235],
-      \ 'rustMacro': ['#4EADE5', 74],
+      \ 'rustMacro': ['#CC7832', 74],
       \ 'rustLifetime': ['#20999D', 37],
       \ 'duplicateFromServer': ['#5E5339', 59],
       \ 'hintBg': ['#3B3B3B', 237],
@@ -395,13 +394,7 @@ hi! link cPreProcRegion NormalFg
 hi! link cUserLabel NormalFg
 hi! link cDataStructureKeyword Keyword
 call s:Hi('cDataStructure', s:p.cDataStructure)
-hi! link cFunction Function
 hi! link cppDestructor cFunction
-hi! link cSemicolon Keyword
-hi! link cComma Keyword
-call s:Hi('cppAfterColon', s:p.cStructField)
-hi! link cppBeforeColon cDataStructure
-call s:Hi('cStructField', s:p.cStructField)
 hi! link cppNullptr Keyword
 hi! link cppTemplate Keyword
 hi! link cTypedef Keyword
@@ -409,28 +402,6 @@ hi! link cppTypeName Keyword
 hi! link cSpecial Keyword
 hi! link cEnum Keyword
 call s:Hi('cSomeMacro', s:p.macroName)
-
-" Rust
-call s:Hi('rustDeriveTrait', s:p.metaData)
-hi! link rustQuestionMark Keyword
-hi! link rustComma Keyword
-hi! link rustSemicolon Keyword
-hi! link rustOperator NormalFg
-call s:Hi('rustCommentLineDoc', s:p.docComment, s:p.null, 'italic')
-call s:Hi('rustMacro', s:p.rustMacro)
-hi! link rustAssert rustMacro
-hi! link rustPanic rustMacro
-hi! link rustEscape Keyword
-hi! link rustSigil NormalFg
-hi! link rustSelf Keyword
-call s:Hi('rustLifetime', s:p.rustLifetime, s:p.null, 'italic')
-call s:Hi('rustTypeParameter', s:p.rustLifetime)
-hi! link rustEnumVariant Constant
-hi! link rustModPath NormalFg
-hi! link rustModPathSep NormalFg
-hi! link rustAs Keyword
-hi! link rustConst Constant
-hi! link rustVarField InstanceField
 
 " Vim
 hi! link vimOption Constant
