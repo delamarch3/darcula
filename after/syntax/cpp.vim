@@ -6,4 +6,3 @@ syn clear cppStructure
 syn keyword cppNullptr nullptr
 syn keyword cppTemplate template
 syn keyword cppTypeName typename
-syn match cppDestructor "\~\_s\{-}\<\I\i*\>\ze\_s\{-}("
