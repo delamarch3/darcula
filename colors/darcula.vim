@@ -38,7 +38,8 @@ let s:p={
       \ 'incSearch': ['#155221', 22],
       \ 'foldedFg': ['#8C8C8C', 245],
       \ 'foldedBg': ['#3A3A3A', 237],
-      \ 'constant': ['#9876AA', 103],
+      \ 'constant': ['#6897BB', 103],
+      \ 'namespace': ['#9876AA', 103],
       \ 'keyword': ['#CC7832', 172],
       \ 'comment': ['#808080', 244],
       \ 'docComment': ['#629755', 65],
@@ -224,6 +225,7 @@ call s:Hi('PreProc', s:p.metaData)
 hi! link Tag Keyword
 call s:Hi('Debug', s:p.debug, s:p.null, 'italic')
 call s:Hi('Function', s:p.function)
+call s:Hi('Namespace', s:p.namespace)
 
 " helper groups
 call s:Hi('docComment', s:p.docComment, s:p.null, 'italic')
@@ -310,7 +312,7 @@ if has('nvim')
   hi! link TSKeywordFunction Keyword
   hi! link TSLabel Normal
   hi! link TSMethod Function
-  hi! link TSNamespace cDataStructure
+  hi! link TSNamespace Namespace
   hi! link TSNone Normal
   hi! link TSNumber Number
   hi! link TSOperator Normal
@@ -385,23 +387,6 @@ if !has('nvim')
         \ s:p.ANSIWhite[0]
         \ ]
 endif
-
-" C/C++
-call s:Hi('cMacroName', s:p.macroName)
-hi! link cConstant cMacroName
-hi! link cPreInclude String
-hi! link cPreProcRegion NormalFg
-hi! link cUserLabel NormalFg
-hi! link cDataStructureKeyword Keyword
-call s:Hi('cDataStructure', s:p.cDataStructure)
-hi! link cppDestructor cFunction
-hi! link cppNullptr Keyword
-hi! link cppTemplate Keyword
-hi! link cTypedef Keyword
-hi! link cppTypeName Keyword
-hi! link cSpecial Keyword
-hi! link cEnum Keyword
-call s:Hi('cSomeMacro', s:p.macroName)
 
 " Vim
 hi! link vimOption Constant
