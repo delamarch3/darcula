@@ -388,6 +388,11 @@ if !has('nvim')
         \ ]
 endif
 
+" Rust
+hi! link rustModPath Namespace
+hi! link rustSelf NormalFg
+hi! link rustSigil NormalFg
+
 " Vim
 hi! link vimOption Constant
 hi! link vimFunction Function
