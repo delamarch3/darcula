@@ -67,7 +67,7 @@ let s:p={
       \ 'warnStripe': ['#BE9117', 136],
       \ 'infoStripe': ['#756D56', 101],
       \ 'hintStripe': ['#6c7176', 242],
-      \ 'typeDef': ['#B9BCD1', 146],
+      \ 'typeDef': ['#A9B7C6', 146],
       \ 'menu': ['#46484A', 238],
       \ 'menuFg': ['#BBBBBB', 250],
       \ 'menuSel': ['#113A5C', 23],
