@@ -20,7 +20,6 @@ let s:p={
       \ 'cursor': ['#BBBBBB', 250],
       \ 'identifierUnderCaret': ['#344134', 237],
       \ 'identifierUnderCaretWrite': ['#40332B', 58],
-      \ 'gutter': ['#313335', 236],
       \ 'selection': ['#214283', 24],
       \ 'cursorLine': ['#323232', 236],
       \ 'cursorLineNr': ['#A4A3A3', 248],
@@ -63,10 +62,10 @@ let s:p={
       \ 'debug': ['#666D75', 102],
       \ 'codeError': ['#532B2E', 52],
       \ 'codeWarning': ['#52503A', 59],
-      \ 'errorStripe': ['#9E2927', 124],
-      \ 'warnStripe': ['#BE9117', 136],
-      \ 'infoStripe': ['#756D56', 101],
-      \ 'hintStripe': ['#6c7176', 242],
+      \ 'errorStripe': ['#FF0000', 124],
+      \ 'warnStripe': ['#FFA500', 136],
+      \ 'infoStripe': ['#FFFFFF', 101],
+      \ 'hintStripe': ['#FFFFFF', 242],
       \ 'typeDef': ['#A9B7C6', 146],
       \ 'menu': ['#46484A', 238],
       \ 'menuFg': ['#BBBBBB', 250],
@@ -171,8 +170,8 @@ call s:Hi('Error', s:p.error)
 call s:Hi('VertSplit', s:p.muted)
 call s:Hi('Folded', s:p.foldedFg, s:p.foldedBg)
 hi! link FoldColumn Folded
-call s:Hi('SignColumn', s:p.null, s:p.gutter)
-call s:Hi('LineNr', s:p.lineNumber, s:p.gutter)
+call s:Hi('SignColumn', s:p.null, s:p.bg)
+call s:Hi('LineNr', s:p.lineNumber, s:p.bg)
 hi! link LineNrAbove LineNr
 hi! link LineNrBelow LineNr
 call s:Hi('CursorLineNr', s:p.cursorLineNr, s:p.cursorLine)
@@ -232,15 +231,15 @@ call s:Hi('docComment', s:p.docComment, s:p.null, 'italic')
 call s:Hi('NormalFg', s:p.fg)
 call s:Hi('GitAddStripe', s:p.addStripe, s:p.addStripe)
 call s:Hi('GitChangeStripe', s:p.changeStripe, s:p.changeStripe)
-call s:Hi('GitDeleteStripe', s:p.deleteStripe, s:p.gutter)
+call s:Hi('GitDeleteStripe', s:p.deleteStripe, s:p.bg)
 call s:Hi('CodeError', s:p.null, s:p.codeError)
 call s:Hi('CodeWarning', s:p.null, s:p.codeWarning)
 call s:Hi('CodeInfo', s:p.null, s:p.infoStripe)
 call s:Hi('CodeHint', s:p.hintFg, s:p.hintBg)
-call s:Hi('ErrorSign', s:p.errorStripe, s:p.gutter)
-call s:Hi('WarningSign', s:p.warnStripe, s:p.gutter)
-call s:Hi('InfoSign', s:p.infoStripe, s:p.gutter)
-call s:Hi('HintSign', s:p.hintStripe, s:p.gutter)
+call s:Hi('ErrorSign', s:p.errorStripe, s:p.bg)
+call s:Hi('WarningSign', s:p.warnStripe, s:p.bg)
+call s:Hi('InfoSign', s:p.infoStripe, s:p.bg)
+call s:Hi('HintSign', s:p.hintStripe, s:p.bg)
 call s:Hi('IdentifierUnderCaret', s:p.null, s:p.identifierUnderCaret)
 call s:Hi('IdentifierUnderCaretWrite', s:p.null, s:p.identifierUnderCaretWrite)
 call s:Hi('InstanceField', s:p.constant)
@@ -349,21 +348,30 @@ if has('nvim')
   hi! link LspDiagnosticsDefaultWarning CodeWarning
   hi! link LspDiagnosticsDefaultInformation CodeInfo
   hi! link LspDiagnosticsDefaultHint CodeHint
+
   hi! link LspDiagnosticsSignError ErrorSign
   hi! link LspDiagnosticsSignWarning WarningSign
   hi! link LspDiagnosticsSignInformation InfoSign
   hi! link LspDiagnosticsSignHint HintSign
+
   hi! link LspReferenceText IdentifierUnderCaret
   hi! link LspReferenceRead IdentifierUnderCaret
   hi! link LspReferenceWrite IdentifierUnderCaretWrite
+
   hi! link LspDiagnosticsUnderlineError CodeError
   hi! link LspDiagnosticsUnderlineWarning CodeWarning
   hi! link LspDiagnosticsUnderlineInformation CodeInfo
   hi! link LspDiagnosticsUnderlineHint CodeHint
+
   hi! link LspDiagnosticsFloatingError NormalFloat
   hi! link LspDiagnosticsFloatingWarning NormalFloat
   hi! link LspDiagnosticsFloatingInformation NormalFloat
   hi! link LspDiagnosticsFloatingHint NormalFloat
+
+  hi! link DiagnosticError ErrorSign
+  hi! link DiagnosticWarn WarningSign
+  hi! link DiagnosticInfo InfoSign
+  hi! link DiagnosticHint HintSign
 endif
 
 " Vim terminal colors (for :terminal)
